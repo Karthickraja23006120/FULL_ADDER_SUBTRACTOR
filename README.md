@@ -56,26 +56,31 @@ Borrow out = A'Bin + A'B + BBin
 Developed by: Karthick Raja k
 RegisterNumber: 212223240066
 */
+/* Program for Encoder 8 To 3 in Dataflow Modelling and verify its truth table in quartus using Verilog programming. 
+
+Developed by: Sanjit.P
+RegisterNumber: 212223230190
+*/
 ```
-module FullAddSub(a,b,c,sum,carry,D,BO);
-input a,b,c;
-output sum,carry,D,BO;
-assign sum=a^b^c;
-assign carry=(a&b)|(b&c)|(a&c);
-assign D=a^b^c;
-assign BO=(~a&b)|(b&c)|(~a&c);
+module Encoder(a0,a1,a2,d0,d1,d2,d3,d4,d5,d6,d7);
+input d0,d1,d2,d3,d4,d5,d6,d7;
+output a0,a1,a2;
+//add logic here using dataflow modelling
+assign a0=d1|d3|d5|d7;
+assign a1=d2|d3|d6|d7;
+assign a2=d4|d5|d6|d7;
 endmodule
 ```
-![Screenshot 2024-04-19 101014](https://github.com/Karthickraja23006120/FULL_ADDER_SUBTRACTOR/assets/139335315/0aa568eb-5c81-4b20-9682-25041a30bbb0)
+![Screenshot 2024-04-19 101426](https://github.com/Karthickraja23006120/FULL_ADDER_SUBTRACTOR/assets/139335315/4c92350e-1719-40b1-a0e5-dff874a8fea1)
 
 **RTL Schematic**
-![Screenshot 2024-04-19 101044](https://github.com/Karthickraja23006120/FULL_ADDER_SUBTRACTOR/assets/139335315/7c24ae1d-985f-4de8-966a-d309d90cd33c)
+![Screenshot 2024-04-19 101455](https://github.com/Karthickraja23006120/FULL_ADDER_SUBTRACTOR/assets/139335315/7fcf9ebc-7203-406e-aa5f-ed6a96662a58)
 
 **Output Timing Waveform**
-![Screenshot 2024-04-19 101116](https://github.com/Karthickraja23006120/FULL_ADDER_SUBTRACTOR/assets/139335315/301b562f-0bff-4949-a238-6f5885cc5ecf)
+![Screenshot 2024-04-19 101523](https://github.com/Karthickraja23006120/FULL_ADDER_SUBTRACTOR/assets/139335315/5ac69443-100a-409e-9230-a949dc10c9f0)
 
 **Result:**
-
+Thus,the Encoder 8 To 3 in Dataflow Modelling using verilog has been implemented successfully and their functionality is validated using their functional tables.
 Thus the Full Adder and Full Subtractor circuits are designed and the truth tables is verified using Quartus software.
 
 
